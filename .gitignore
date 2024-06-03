@@ -2,5 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/MrG.Maui/FileContentIndex/fac4c007-1062-4f06-9cba-3b934784c013.vsidx
-/obj
+/.vs/
+/obj/
+/bin/
