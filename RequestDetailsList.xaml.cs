@@ -1,4 +1,4 @@
-using MrG.Base.Database.Data;
+using MrG.AI.Client.Database.Data;
 
 namespace MrG.Maui;
 

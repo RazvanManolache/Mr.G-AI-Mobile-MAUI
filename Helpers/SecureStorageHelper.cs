@@ -1,6 +1,6 @@
-﻿using MrG.Base.Data;
-using MrG.Base.Enum;
-using MrG.Base.Helpers;
+﻿using MrG.AI.Client.Data;
+using MrG.AI.Client.Enum;
+using MrG.AI.Client.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;

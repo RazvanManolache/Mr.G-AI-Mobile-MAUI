@@ -1,6 +1,6 @@
-using MrG.Base.Database;
-using MrG.Base.Database.Data;
-using MrG.Base.VM;
+using MrG.AI.Client.Database;
+using MrG.AI.Client.Database.Data;
+using MrG.AI.Client.VM;
 using MrG.Maui.Helpers;
 using System.ComponentModel;
 

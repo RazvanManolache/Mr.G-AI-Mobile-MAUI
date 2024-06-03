@@ -1,5 +1,5 @@
-using MrG.Base.Data;
-using MrG.Base.Helpers;
+using MrG.AI.Client.Data;
+using MrG.AI.Client.Helpers;
 using MrG.Maui.Factories;
 using MrG.Maui.VM;
 

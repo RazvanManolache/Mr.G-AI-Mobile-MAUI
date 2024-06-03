@@ -1,8 +1,8 @@
-using MrG.Base;
-using MrG.Base.Data;
-using MrG.Base.Data.Action;
-using MrG.Base.Helpers;
-using MrG.Base.VM;
+using MrG.AI.Client;
+using MrG.AI.Client.Data;
+using MrG.AI.Client.Data.Action;
+using MrG.AI.Client.Helpers;
+using MrG.AI.Client.VM;
 
 namespace MrG.Maui
 {

@@ -1,5 +1,5 @@
 
-using MrG.Base.Database.Data;
+using MrG.AI.Client.Database.Data;
 
 namespace MrG.Maui.Helpers
 {
@@ -16,7 +16,7 @@ namespace MrG.Maui.Helpers
             }
             if(item is OutputItem outputItem)
             {
-                if (outputItem.Type == Base.Enum.ResultType.Images)
+                if (outputItem.Type == MrG.AI.Client.Enum.ResultType.Images)
                 {
                     return ImageTemplate;
                 }

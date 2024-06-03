@@ -1,4 +1,4 @@
-﻿using MrG.Base.Data;
+﻿using MrG.AI.Client.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;

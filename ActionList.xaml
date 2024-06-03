@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:data="clr-namespace:MrG.Base.Data;assembly=MrG.Base"
-             xmlns:ViewModel="clr-namespace:MrG.Base.VM;assembly=MrG.Base" 
+             xmlns:data="clr-namespace:MrG.AI.Client.Data;assembly=MrG.AI.Client"
+             xmlns:ViewModel="clr-namespace:MrG.AI.Client.VM;assembly=MrG.AI.Client" 
              x:Class="MrG.Maui.ActionList"
              >
     <ContentPage.BindingContext>

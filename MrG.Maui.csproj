@@ -68,7 +68,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\MrG.Net.Base\MrG.Base.csproj" />
+	  <ProjectReference Include="..\MrG.AI.Client\MrG.AI.Client.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

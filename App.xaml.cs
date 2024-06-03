@@ -1,6 +1,6 @@
-﻿using MrG.Base.Data;
-using MrG.Base.Database;
-using MrG.Base.Helpers;
+﻿using MrG.AI.Client.Data;
+using MrG.AI.Client.Database;
+using MrG.AI.Client.Helpers;
 using MrG.Maui.Helpers;
 
 namespace MrG.Maui

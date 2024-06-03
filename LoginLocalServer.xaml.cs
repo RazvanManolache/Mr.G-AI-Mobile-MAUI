@@ -1,5 +1,5 @@
-using MrG.Base.Data;
-using MrG.Base.EventArgs;
+using MrG.AI.Client.Data;
+using MrG.AI.Client.EventArgs;
 using MrG.Maui.Helpers;
 
 namespace MrG.Maui

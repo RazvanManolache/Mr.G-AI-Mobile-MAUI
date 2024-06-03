@@ -1,6 +1,6 @@
-﻿using MrG.Base.Data.Action;
-using MrG.Base.Database.Data;
-using MrG.Base.Enum;
+﻿using MrG.AI.Client.Data.Action;
+using MrG.AI.Client.Database.Data;
+using MrG.AI.Client.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace MrG.Maui.VM
 {
     [QueryProperty(nameof(Request), nameof(Request))]
-    public class RequestDetailsVM : MrG.Base.VM.RequestDetailsVM
+    public class RequestDetailsVM : MrG.AI.Client.VM.RequestDetailsVM
     {
         Request? request;
         public Request? Request

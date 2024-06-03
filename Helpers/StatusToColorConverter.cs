@@ -1,4 +1,4 @@
-using MrG.Base.Enum;
+using MrG.AI.Client.Enum;
 using System;
 using System.Globalization;
 
