@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MrG.Maui"
+             xmlns:behaviors="clr-namespace:MrG.Maui.Behaviors"
+             x:Class="MrG.Maui.Login" >
+    <VerticalStackLayout>        
+        <Label Text="Select Server:" />
+        <HorizontalStackLayout>
+            <RadioButton Content="Local Server" IsChecked="True" x:Name="LocalServerOption" >
+                <RadioButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLocalServerOptionClicked" />
+                </RadioButton.GestureRecognizers>
+            </RadioButton>
+            <RadioButton Content="Online Server" x:Name="OnlineServerOption">
+                <RadioButton.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnOnlineServerOptionClicked" />
+                </RadioButton.GestureRecognizers>
+            </RadioButton>
+        </HorizontalStackLayout>
+
+        <local:LoginLocalServer x:Name="LocalServerLayout" LoginSucceeded="LocalServerLoginSucceeded"  IsVisible="{Binding Source={x:Reference LocalServerOption}, Path=IsChecked}"/>
+        <local:LoginOnlineServer  x:Name="OnlineServerLayout"  IsVisible="{Binding Source={x:Reference OnlineServerOption}, Path=IsChecked}"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MrG.Maui.LoginLocalServer">
+    <StackLayout>
+        <Label Text="Enter IP:" />
+        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal"  >
+            <Entry Placeholder="Enter IP Address" x:Name="IPAddressField" TextChanged="OnIPAddressChanged" HorizontalOptions="FillAndExpand"  />
+            <Button Text="Test" Clicked="OnTestClicked" IsEnabled="False" x:Name="TestButton" />
+        </StackLayout>
+        <Label x:Name="LocalServerNotificationLabel" TextColor="Red"  />
+        <Label Text="Don't have a server? Click here to learn how to install one." TextDecorations="Underline" >
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnHowToClicked" />
+            </Label.GestureRecognizers>
+        </Label>
+        
+        <Button x:Name="ConnectButton" Text="Connect" Clicked="OnConnectClicked" Margin="20" IsEnabled="False" />
+        
+    </StackLayout>
+</ContentView>

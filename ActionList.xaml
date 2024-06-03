@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:data="clr-namespace:MrG.Base.Data;assembly=MrG.Base"
+             xmlns:ViewModel="clr-namespace:MrG.Base.VM;assembly=MrG.Base" 
+             x:Class="MrG.Maui.ActionList"
+             >
+    <ContentPage.BindingContext>
+        <ViewModel:ActionListVM/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+
+        <Grid ColumnDefinitions="*,Auto">            
+            <SearchBar Text="{Binding SearchText}"  Grid.Column="0" Grid.Row="1"/>
+            <Button Text="Refresh"  Clicked="RefreshCommand" Grid.Column="1" Grid.Row="1" />
+        </Grid>
+
+
+
+        <ListView x:Name="ActionListView"  HasUnevenRows="True"  ItemsSource="{Binding Actions}"    >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <Grid ColumnDefinitions="*,Auto">
+                            <Label Text="{Binding Name}"  Grid.Column="0" Grid.Row="1" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                            <Button Text=">" HeightRequest="40" WidthRequest="40" FontSize="Medium" Clicked="ActionClicked" Grid.Column="1" Grid.Row="1" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>

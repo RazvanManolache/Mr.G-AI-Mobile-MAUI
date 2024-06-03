@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModel="clr-namespace:MrG.Base.VM;assembly=MrG.Base" 
+             xmlns:local="clr-namespace:MrG.Maui"
+             x:Class="MrG.Maui.RequestList">
+    <ContentPage.BindingContext>
+        <ViewModel:RequestListVM/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="120" />
+
+            </Grid.ColumnDefinitions>
+            <!-- Search Bar -->
+            <SearchBar Placeholder="Search"
+        Text="{Binding SearchText}" Grid.Column="0"/>
+            <!-- Sort Order Picker -->
+            <Picker Title="Sort Order"
+     SelectedItem="{Binding SortOrder}"
+     ItemsSource="{Binding SortOrderOptions}" Grid.Column="1"/>
+        </Grid>
+        <ScrollView>
+
+            <StackLayout>
+                <!-- List of Requests -->
+                <CollectionView ItemsSource="{Binding Requests}"
+                         SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <local:RequestDetailsList>
+                                <local:RequestDetailsList.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnPressedItem"/>
+                                </local:RequestDetailsList.GestureRecognizers>
+                            </local:RequestDetailsList>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <!-- Load More Button -->
+                <Button Text="Load More"
+                 Clicked="LoadMoreClicked" IsVisible="{Binding LoadMoreVisible}"/>
+            </StackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

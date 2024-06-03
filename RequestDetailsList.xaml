@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:MrG.Maui.Helpers"
+             x:Class="MrG.Maui.RequestDetailsList" >
+ 
+    <VerticalStackLayout  Margin="5" >
+        <Grid  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="3*"/>
+
+            </Grid.RowDefinitions>
+            <Label
+ Text="{Binding ActionName}"
+VerticalOptions="Center" 
+HorizontalOptions="Center" Grid.Column="0" Grid.Row="0" FontSize="Default"/>
+            <Label
+Text="{Binding CreatedAt}"
+VerticalOptions="Center" 
+HorizontalOptions="Center"  Grid.Column="0" Grid.Row="1" FontSize="10"/>
+
+
+            <Label Text="{Binding RequestStatus}" MinimumWidthRequest="100" HorizontalTextAlignment="Center" Padding="10" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="2" Grid.RowSpan="2">
+                <Label.BackgroundColor >
+                    <Binding Path="RequestStatus">
+                        <Binding.Converter>
+                            <helpers:StatusToColorConverter/>
+                        </Binding.Converter>
+                    </Binding>
+                </Label.BackgroundColor>
+                
+            </Label>
+            <FlexLayout Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" HorizontalOptions="Center">
+                <BindableLayout.ItemsSource >
+                    <Binding Path="OutputItems" />
+                </BindableLayout.ItemsSource>
+                <BindableLayout.ItemTemplateSelector>
+                    <helpers:RequestDetailsTemplateSelector>
+                        <helpers:RequestDetailsTemplateSelector.TextTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding}" Padding="10" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </DataTemplate>
+                        </helpers:RequestDetailsTemplateSelector.TextTemplate>
+                        <helpers:RequestDetailsTemplateSelector.ImageTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Result}" MaximumHeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </DataTemplate>
+                        </helpers:RequestDetailsTemplateSelector.ImageTemplate>
+                    </helpers:RequestDetailsTemplateSelector>
+
+                </BindableLayout.ItemTemplateSelector>
+            </FlexLayout>
+        </Grid>
+      
+      
+    </VerticalStackLayout>
+</ContentView>

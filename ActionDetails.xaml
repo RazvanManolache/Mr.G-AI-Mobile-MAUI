@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ViewModel="clr-namespace:MrG.Maui.VM;assembly=MrG.Maui"
+             x:Class="MrG.Maui.ActionDetails">
+    <ContentPage.BindingContext>
+        <ViewModel:ActionDetailsVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>        
+        <ToolbarItem Text="Run" Clicked="RunAction"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView >
+        <VerticalStackLayout>
+        <Label 
+            Text="{Binding ActionApi.Name}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <VerticalStackLayout x:Name="Fields">
+            
+        </VerticalStackLayout>
+       
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
